@@ -16,6 +16,18 @@ li {
     border-bottom: 1px solid;
 }
 
+.input-addon{
+  background-color: #af3636;
+  border-bottom-left-radius: 0px ;
+  border-top-right-radius: 4px;
+  border:1px solid #ccc;
+  border-bottom: none;
+}
+textarea{
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+}
+
 #google-map {
     height: 400px;
     margin-bottom: 20px;
