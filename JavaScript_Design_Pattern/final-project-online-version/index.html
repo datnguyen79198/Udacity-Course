@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Final project</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+  </head>
+  <body>
+    <div>
+        <h2>Yelp Website Regularization</h2>
+    </div>
+    <div>
+        <div id="google-map"></div>
+    </div>
+    <!-- search area -->
+    <form class="form-group" data-bind="submit: searchLocation">
+        <div class="row">
+              <div class="col-sm-4">
+                  <div class="input-group">
+                      <span class="input-group-addon">Find</span>
+                      <input type="text" class="form-control" id="search-term" placeholder="restaurant,cinema,hotel,..." data-bind="value: term">
+                  </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="input-group">
+                      <span class="input-group-addon">Near</span>
+                      <input type="text" class="form-control" id="search-location" placeholder="address,city,state or zip code" data-bind="value: area">
+                  </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
+
+    <!-- infomation about all of location searched -->
+    <div class="row">
+        <div class="col-sm-6" data-bind="foreach: nowLocations">
+            <div class="res-container col-sm-4">
+                <div class="res-img" data-bind="click: $parent.clickLocation">
+                    <img data-bind="attr: {src: res.image_url}">
+                </div>
+                <div class="res-item col-sm-8">
+                    <h4 data-bind="text: res.name"></h4>
+                    <div class="res-item col-sm-2">
+                        <div class="rating-img">
+                            <img data-bind="attr: {src:$parent.getRatingImg(res.rating)}">
+                        </div>
+                        <p data-bind="text: res.review_count + ' reviews' "></p>
+                        <p data-bind="text: res.price"></p>
+                    </div>
+                    <div class="res-item right-item col-sm-10">
+                        <p data-bind="text: address"></p>
+                        <p data-bind="text: 'Phone: ' + res.phone"></p>
+                        <span class='label label-success' data-bind="text: res.is_closed ? 'Close' : 'is now opened'"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- reviews info -->
+        <div class="col-sm-4" data-bind="foreach: reviews">
+            <div class="res-container">
+                <div class="review-img">
+                    <img data-bind="attr: {src:user.image_url}">
+                    <h6 data-bind="text: user.name"></h6>
+                </div>
+                <div class="res-container">
+                  <div class="rating-img">
+                    <img data-bind="attr: {src: $parent.getRatingImg(rating)}">
+                  </div>
+                  <p class="time" data-bind="text: time_created"></p>
+                  <p data-bind="text: text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyR8QX8c6PgKBBwK7YIWEOkh5kxF_eyPw"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

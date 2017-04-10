@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    padding: 0;
+}
+
+body {
+    margin: 0 30px;
+}
+
+h6 {
+    color: #1E90FF;
+}
+
+li {
+    font-size: 90%;
+    border-bottom: 1px solid;
+}
+
+#google-map {
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+
+.res-container {
+    float:left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.res-img:hover {
+    border: 1px solid #D3D3D3;
+    cursor: pointer;
+}
+
+.res-img {
+    float: left;
+    text-align: center;
+}
+
+.res-img img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.rating-img img {
+    width: 100px;
+    height: 20px;
+    margin: 5px;
+}
+
+.res-item {
+    float: left;
+    padding: 5px 10px 5px 5px;
+
+}
+
+.right-item {
+    padding-left: 100px;
+}
+
+.review-img img {
+    width: 60px;
+    height: 60px;
+}
